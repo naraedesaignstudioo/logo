@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NARAÉ DESIGN STUDIO</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    color:#333;
+
+    /* Background elegan */
+    background:
+        radial-gradient(circle at top left, #f1eaff 0%, transparent 45%),
+        radial-gradient(circle at bottom right, #e8dcfb 0%, transparent 50%),
+        linear-gradient(180deg, #f7f5fb 0%, #fdfcff 100%);
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:linear-gradient(135deg,#b88ae3,#9b6ccf);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.brand img{width:42px}
+.brand-name{font-weight:bold}
+
+/* MENU HORIZONTAL */
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+.nav-links a{
+    font-weight:500;
+    color:#fff;
+}
+.nav-links a:hover{opacity:0.85}
+.nav-btn{
+    padding:8px 22px;
+    background:#fff;
+    color:#9b6ccf !important;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:90px 20px 70px;
+    background:
+        linear-gradient(
+            rgba(155,108,207,0.75),
+            rgba(184,138,227,0.75)
+        ),
+        url("lb.jpg") center/cover no-repeat;
+    color:#fff;
+}
+.hero h1{
+    color:#f3eaff;
+    font-size:18px;
+    letter-spacing:1px;
+}
+.hero h2{
+    font-size:36px;
+    margin:15px 0;
+}
+.hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+    color:#f9f6ff;
+}
+
+/* DIVIDER */
+.divider{
+    width:140px;
+    height:4px;
+    background:linear-gradient(90deg,#b88ae3,#9b6ccf);
+    margin:40px auto;
+    border-radius:6px;
+}
+
+/* SECTION */
+section{
+    background:transparent;
+}
+h3{text-align:center;margin-bottom:35px}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+.card{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    border-top:6px solid #b88ae3;
+}
+.price{color:#9b6ccf;font-weight:bold;margin:8px 0}
+
+/* PORTFOLIO */
+.card img{
+    width:100%;
+    border-radius:12px;
+}
+.porto-title{
+    margin-top:10px;
+    font-weight:600;
+    text-align:center;
+}
+
+/* ORDER */
+select,textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+.price-box{
+    background:#f0e9fb;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    color:#6a3fb4;
+    margin-bottom:10px;
+}
+.dp-info{
+    font-size:14px;
+    color:#a03b3b;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#2f2b3a;
+    color:#fff;
+    padding:60px 20px 30px;
+}
+.footer-wrap{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:40px;
+}
+.footer-col h2,
+.footer-col h3{margin-bottom:12px}
+.footer-col p{font-size:14px;line-height:1.7}
+.footer-col ul{list-style:none;padding:0}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:#d6c4f0}
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    font-size:13px;
+    opacity:0.7;
+}
+
+/* FLOAT */
+.wa-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+.wa-float img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+
+<script>
+function updateHarga(){
+    let l=document.getElementById("layanan").value;
+    let h="-";
+    if(l=="Desain Logo") h="Rp150.000";
+    if(l=="Paket Branding") h="Rp300.000";
+    if(l=="Desain Media Sosial") h="Rp100.000";
+    document.getElementById("harga").innerHTML="Harga: "+h;
+}
+function kirimWA(){
+    let pesan=
+    "Halo NARAÉ DESIGN STUDIO,%0A"+
+    "Layanan: "+layanan.value+"%0A"+
+    harga.innerText+"%0A"+
+    "DP: 30% sebelum proses desain%0A"+
+    "Pembayaran: "+pembayaran.value+"%0A"+
+    "Brief: "+brief.value;
+    window.open("https://wa.me/6285270014411?text="+pesan);
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="brand">
+        <img src="logo.png">
+        <div class="brand-name">NARAÉ DESIGN STUDIO</div>
+    </div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#layanan-section">Layanan</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#order" class="nav-btn">Pesan</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1># Elegant Design for Growing Brands</h1>
+    <h2>NARAÉ Design Studio</h2>
+    <p>
+        NARAÉ Design Studio membantu UMKM Indonesia memiliki identitas visual
+        yang profesional dan elegan dengan template desain eksklusif dan jasa custom.
+    </p>
+    <a href="#order" class="btn">Pesan Sekarang</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="layanan-section">
+<h3>Layanan Kami</h3>
+<div class="grid">
+    <div class="card">
+        <h4>Desain Logo</h4>
+        <p>Logo unik & profesional sesuai karakter brand.</p>
+        <div class="price">Rp150.000</div>
+        <strong>Waktu: 3–5 hari</strong>
+    </div>
+    <div class="card">
+        <h4>Paket Branding</h4>
+        <p>Identitas visual lengkap & konsisten.</p>
+        <div class="price">Rp300.000</div>
+        <strong>Waktu: 5–7 hari</strong>
+    </div>
+    <div class="card">
+        <h4>Desain Media Sosial</h4>
+        <p>Feed estetik & menarik.</p>
+        <div class="price">Rp100.000</div>
+        <strong>Waktu: 2–4 hari</strong>
+    </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<section id="portofolio">
+<h3>Portofolio</h3>
+<div class="grid">
+    <div class="card"><img src="porto1.jpg"><div class="porto-title">Logo UMKM Kuliner</div></div>
+    <div class="card"><img src="porto2.jpg"><div class="porto-title">Logo UMKM Fashion</div></div>
+    <div class="card"><img src="porto3.jpg"><div class="porto-title">Logo Branding Usaha</div></div>
+    <div class="card"><img src="porto5.jpg"><div class="porto-title">Logo Coffee Shop</div></div>
+    <div class="card"><img src="porto6.jpg"><div class="porto-title">Logo Campus</div></div>
+    <div class="card"><img src="porto7.jpg"><div class="porto-title">Logo Brand Mobil</div></div>
+    <div class="card"><img src="porto8.jpg"><div class="porto-title">Logo Peralatan Dapur</div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ORDER -->
+<section id="order">
+<h3>Pemesanan</h3>
+<div class="card">
+    <select id="layanan" onchange="updateHarga()">
+        <option>Desain Logo</option>
+        <option>Paket Branding</option>
+        <option>Desain Media Sosial</option>
+    </select>
+    <div id="harga" class="price-box">Harga: -</div>
+    <div class="dp-info">⚠️ Pesanan diproses setelah pembayaran DP 30%</div>
+    <select id="pembayaran">
+        <option>DANA</option>
+        <option>OVO</option>
+        <option>Transfer Bank</option>
+    </select>
+    <textarea id="brief" rows="4" placeholder="Brief desain..."></textarea>
+    <button class="btn" onclick="kirimWA()">Kirim ke WhatsApp</button>
+</div>
+</section>
+
+<footer>
+<div class="footer-wrap">
+    <div class="footer-col">
+        <h2>NARAÉ</h2>
+        <p>Studio desain khusus UMKM dengan fokus pada identitas visual elegan dan profesional untuk membantu bisnis Anda tumbuh.</p>
+    </div>
+    <div class="footer-col">
+        <h3>Fitur Unggulan</h3>
+        <ul>
+            <li><a href="#">Penyimpanan Cloud</a></li>
+            <li><a href="#">Hak Komersial Penuh</a></li>
+            <li><a href="#">Generator Mockup AR</a></li>
+            <li><a href="#">Integrasi Platform</a></li>
+            <li><a href="#">Dukungan Multi-bahasa</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Kontak & Dukungan</h3>
+        <p>📞 +62 852-7001-4411</p>
+        <p>✉️ hello@naraestudio.com</p>
+        <p>💬 WhatsApp Support</p>
+        <p>🕘 Senin–Jumat, 09:00–17:00 WIB</p>
+    </div>
+</div>
+<div class="footer-bottom">
+© 2023 NARAÉ Design Studio. Hak cipta dilindungi undang-undang.<br>
+Semua desain dilengkapi dengan hak komersial penuh untuk pemilik UMKM.
+</div>
+</footer>
+
+<a href="https://wa.me/6285270014411" class="wa-float">
+    <img src="porto4.jpg">
+</a>
+
+</body>
+</html>
